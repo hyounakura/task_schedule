@@ -1,6 +1,4 @@
-# README
-
-タスクスケジュールアプリ
+# タスクスケジュールアプリ
 
 
 * アプリケーション概要
@@ -124,7 +122,7 @@
 
 |Column|Type|Option|
 |------|----|------|
-|name|string|null: false, unique:true|
+|name|string|null: false|
 
 ### Association
 

@@ -1,0 +1,37 @@
+.group-top {
+  height: 10vh;
+  background-color: skyblue;
+  text-align: center;
+  font-size: 4vh;
+  padding: 2vh 0;
+  &__icon {
+    position: absolute;
+    top: 3vh;
+    right: 3vw;
+  }
+}
+
+.group-btn {
+  height: 90vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  &__contents {
+    height: 30vh;
+    width: 50vw;
+    padding: 5vh;
+    .group-content {
+      height: 100%;
+      width: 100%;
+      border: solid 1px black;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      &__name {
+        width: 100%;
+        text-align: center;
+        font-size: 3vh;
+      }
+    }
+  }
+}
