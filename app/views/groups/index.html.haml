@@ -1,8 +1,23 @@
 .group-top
   グループリスト
-  = icon('fas', 'cog', class: "group-top__icon")
+  = link_to destroy_user_session_path, method: :delete, class: "logout" do
+    ログアウト
+  = link_to do
+    = icon('fas', 'cog', class: "group-top__icon")
+  .arrow_box
+    = link_to new_group_path, class: "arrow_box__link_to" do
+      .arrow_box__contents
+        追加
+    = link_to edit_group_index_path, class: "arrow_box__link_to" do
+      .arrow_box__contents
+        編集
+    = link_to destroy_group_index_path, class: "arrow_box__link_to" do
+      .arrow_box__contents
+        削除
 .group-btn
-  .group-btn__contents
-    .group-content
-      .group-content__name
-        グループ名(10人)
+  - current_user.groups.each do |group|
+    = link_to group_path(group.id), class: "edit_group" do
+      .group-btn__contents
+        .group-content
+          .group-content__name
+            = group.name
