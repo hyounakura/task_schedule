@@ -1,9 +1,8 @@
 class GroupsController < ApplicationController
-  before_action :set_group, only: [:edit, :update, :destroy, :show]
+  include Calender
+  before_action :set_group, only: %i[edit update destroy show]
 
-
-  def index
-  end
+  def index; end
 
   def new
     @group = Group.new
@@ -20,10 +19,11 @@ class GroupsController < ApplicationController
   end
 
   def show
+    @make_calendar = make_calendar
+    binding.pry
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @group.update(group_params)
@@ -37,8 +37,6 @@ class GroupsController < ApplicationController
     @group.destroy
     redirect_to action: :index
   end
-
-
 
   private
 

@@ -16,8 +16,8 @@
         削除
 .group-btn
   - current_user.groups.each do |group|
-    = link_to group_path(group.id), class: "edit_group" do
-      .group-btn__contents
+    .group-btn__contents
+      = link_to group_path(group.id), class: "edit_group" do
         .group-content
           .group-content__name
             = group.name
