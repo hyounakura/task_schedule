@@ -20,7 +20,6 @@ class GroupsController < ApplicationController
 
   def show
     @make_calendar = make_calendar
-    binding.pry
   end
 
   def edit; end
