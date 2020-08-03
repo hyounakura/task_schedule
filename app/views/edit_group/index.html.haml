@@ -1,0 +1,10 @@
+.group-top
+  編集するグループを選んでください
+
+.group-btn
+  - current_user.groups.each do |group|
+    =link_to edit_group_path(group.id), class: "edit_group" do
+      .group-btn__contents
+        .group-content
+          .group-content__name
+            = group.name

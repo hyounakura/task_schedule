@@ -1,0 +1,10 @@
+.group-top
+  削除するグループを選んでください
+
+.group-btn
+  - current_user.groups.each do |group|
+    =link_to group_path(group.id), method: :delete,  class: "edit_group" do
+      .group-btn__contents
+        .group-content
+          .group-content__name
+            = group.name
