@@ -1,5 +1,4 @@
 class GroupsController < ApplicationController
-  include Calender
   before_action :set_group, only: %i[edit update destroy show]
 
   def index; end
@@ -18,10 +17,7 @@ class GroupsController < ApplicationController
     end
   end
 
-  def show
-    @make_calendar = make_calendar
-    binding.pry
-  end
+  def show; end
 
   def edit; end
 
