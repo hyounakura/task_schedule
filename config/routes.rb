@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :groups
   resources :edit_group, only: :index
   resources :destroy_group, only: :index
+  get 'users/index'
 end
