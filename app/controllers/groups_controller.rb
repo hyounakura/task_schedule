@@ -17,10 +17,12 @@ class GroupsController < ApplicationController
     end
   end
 
+
   def show
     @date = Date.today
     @wdays = ['(日)', '(月)', '(火)', '(水)', '(木)', '(金)', '(土)']
   end
+
 
   def edit; end
 
