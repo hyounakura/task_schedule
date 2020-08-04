@@ -1,3 +1,56 @@
 .group-show-btn {
   height: 90vh;
+  padding: 0 4.5vw;
+  &__title {
+    height: 8vh;
+    font-size: 4vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    span {
+      display: inline-block;
+    }
+  }
+  .dayoftheweek {
+    height: 5vh;
+    display: flex;
+    align-items: flex-end;
+    &__content {
+      border: solid 1px black;
+    }
+    &__content2 {
+      border-top: solid 1px black;
+      border-right: solid 1px black;
+      border-bottom: solid 1px black;
+    }
+    &__content, &__content2 {
+      height: 3.5vh;
+      width: 13vw;
+      font-size: 2vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  .calendar-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    &__start {
+      border-left: solid 1px black;
+    }
+    &__start, &__other {
+      height: 12vh;
+      width: 13vw;
+      border-right: solid 1px black;
+      border-bottom: solid 1px black;
+      display: flex;
+      justify-content: center;
+      padding-top: 1vh;
+      font-size: 3vh;
+      span {
+        display: inline-block;
+      }
+    }
+  }
 }

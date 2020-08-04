@@ -4,5 +4,38 @@
 
 .group-show-btn
   .group-show-btn__title
-    8月
+    %span= @date.year
+    %span>年&emsp;
+    %span= @date.month
+    %span>月
   .dayoftheweek
+    - @wdays.each_with_index do |wday, i|
+      - if i == 0
+        .dayoftheweek__content
+          = wday
+      - else
+        .dayoftheweek__content2
+          = wday
+  .calendar-content
+    - make_calendar[:start_week].each_with_index do |week, i|
+      - if i == 0
+        .calendar-content__start
+          %span= week
+      - else
+        .calendar-content__other
+          %span= week
+    - make_calendar[:middle_week].each do |middle|
+      - middle.each_with_index do |week, i|
+        - if i == 0
+          .calendar-content__start
+            %span= week
+        - else
+          .calendar-content__other
+            %span= week
+    - make_calendar[:end_week].each_with_index do |week, i|
+      - if i == 0
+        .calendar-content__start
+          %span= week
+      - else
+        .calendar-content__other
+          %span= week
