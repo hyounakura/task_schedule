@@ -1,41 +1,61 @@
-.group-top
-  = @group.name
-  スケジュール
+.group
+  .group-top
+    = @group.name
+    スケジュール
 
-.group-show-btn
-  .group-show-btn__title
-    %span= @date.year
-    %span>年&emsp;
-    %span= @date.month
-    %span>月
-  .dayoftheweek
-    - @wdays.each_with_index do |wday, i|
-      - if i == 0
-        .dayoftheweek__content
-          = wday
-      - else
-        .dayoftheweek__content2
-          = wday
-  .calendar-content
-    - make_calendar[:start_week].each_with_index do |week, i|
-      - if i == 0
-        .calendar-content__start
-          %span= week
-      - else
-        .calendar-content__other
-          %span= week
-    - make_calendar[:middle_week].each do |middle|
-      - middle.each_with_index do |week, i|
+  .group-show-btn
+    .group-show-btn__title
+      %span= @date.year
+      %span>年&emsp;
+      %span= @date.month
+      %span>月
+    .dayoftheweek
+      - @wdays.each_with_index do |wday, i|
+        - if i == 0
+          .dayoftheweek__content
+            = wday
+        - else
+          .dayoftheweek__content2
+            = wday
+    .calendar-content.calendar-clickevent
+      - make_calendar[:start_week].each_with_index do |week, i|
         - if i == 0
           .calendar-content__start
             %span= week
         - else
           .calendar-content__other
             %span= week
-    - make_calendar[:end_week].each_with_index do |week, i|
-      - if i == 0
-        .calendar-content__start
-          %span= week
-      - else
-        .calendar-content__other
-          %span= week
+      - make_calendar[:middle_week].each do |middle|
+        - middle.each_with_index do |week, i|
+          - if i == 0
+            .calendar-content__start
+              %span= week
+          - else
+            .calendar-content__other
+              %span= week
+      - make_calendar[:end_week].each_with_index do |week, i|
+        - if i == 0
+          .calendar-content__start
+            %span= week
+        - else
+          .calendar-content__other
+            %span= week
+
+  .group-task
+    .group-task__top
+      .group-task__top__name
+        .group-task__top__name__content
+          現場名
+      .group-task__top__time
+        .group-task__top__time__content
+          作業時間：
+    .group-task__btn
+      .group-task__btn__member
+        .group-task__btn__member__title
+          メンバー
+        %ul.group-task__btn__member__list
+          %li ・a
+          %li ・b
+          %li ・c
+      .group-task__btn__content
+        作業内容

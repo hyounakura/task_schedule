@@ -68,6 +68,7 @@
 |------|----|------|
 |place|string|null: false|
 |group_id|integer|null: false, foreign_key: true|
+|date_id|date|null: false|
 
 ### Association
 
