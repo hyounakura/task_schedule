@@ -1,0 +1,30 @@
+.group-task
+  .group-task__top
+    .group-task__top__name
+      .group-task__top__name__content
+        = task.name
+    .group-task__top__time
+      .group-task__top__time__content
+        作業時間&emsp;
+        %span=task.start_time_id.hour
+        %span：
+        %span=min_collect(task.start_time_id.min)
+        &thinsp;
+        〜
+        &thinsp;
+        %span=task.end_time_id.hour
+        %span：
+        %span=min_collect(task.end_time_id.min)
+  .group-task__btn
+    .group-task__btn__member
+      .group-task__btn__member__title
+        メンバー
+        - task.users.each do |member|
+          .group-task__btn__member__list
+            %span・
+            =member.name
+    .group-task__btn__content
+      作業内容
+      .group-task__btn__content__content
+      &emsp;
+      = task.content

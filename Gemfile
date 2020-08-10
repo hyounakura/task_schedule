@@ -52,6 +52,7 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'active_hash'
 gem 'devise'
 gem 'font-awesome-sass'
 gem 'haml-rails', '>= 1.0', '<= 2.0.1'

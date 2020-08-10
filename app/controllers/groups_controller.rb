@@ -20,6 +20,7 @@ class GroupsController < ApplicationController
   def show
     @date = Date.today
     @wdays = ['(日)', '(月)', '(火)', '(水)', '(木)', '(金)', '(土)']
+    @task = Task.where('date LIKE(?) AND group_id LIKE(?)', "%#{Date.today.year}-#{collect_month}%", "%#{params[:id]}%")
   end
 
   def edit; end
@@ -45,5 +46,13 @@ class GroupsController < ApplicationController
 
   def group_params
     params.require(:group).permit(:name, user_ids: [])
+  end
+
+  def collect_month
+    if Date.today.month < 10
+      "0#{Date.today.month}"
+    else
+      Date.today.month.to_s
+    end
   end
 end

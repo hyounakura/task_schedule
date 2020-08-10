@@ -1,0 +1,28 @@
+- if i == 0
+  .calendar-content__start
+    .calendar-content__top
+      = week
+    - task.each do |task|
+      - if task.date.day == week
+        .calendar-content__task
+          .calendar-content__task__top
+            %span=task.name
+          .calendar-content__task__btn
+            %span=task.start_time_id.hour
+            %span：
+            %span=min_collect(task.start_time_id.min)
+        = render partial: 'group-task', locals: { task: task }
+- else
+  .calendar-content__other
+    .calendar-content__top
+      = week
+    - task.each do |task|
+      - if task.date.day == week
+        .calendar-content__task
+          .calendar-content__task__top
+            %span=task.name
+          .calendar-content__task__btn
+            %span=task.start_time_id.hour
+            %span：
+            %span=min_collect(task.start_time_id.min)
+        = render partial: 'group-task', locals: { task: task }

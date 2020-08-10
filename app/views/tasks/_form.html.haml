@@ -1,0 +1,40 @@
+=form_with(model: [group, task], local: true) do |f|
+  - if task.errors.any?
+    .SettingGroupForm__errors
+      %ul
+        - task.errors.full_messages.each do |message|
+          %li= message
+
+  .SettingGroupForm__field
+    .SettingGroupForm__leftField
+      = f.label :name, "日にち", class: 'SettingGroupForm__label'
+    .SettingGroupForm__rightField
+      .input-date-wrap
+        = raw sprintf(f.date_select(:date, class:'select-date', use_month_numbers: true, default: Date.today, start_year: (Time.now.year), end_year: (Time.now.year + 1), date_separator: '%s'), "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>"
+  .SettingGroupForm__field
+    .SettingGroupForm__leftField
+      = f.label :name, "現場名", class: 'SettingGroupForm__label'
+    .SettingGroupForm__rightField
+      = f.text_field :name, class: 'SettingGroupForm__input', placeholder: '現場名を入力してください'
+  .SettingGroupForm__field
+    .SettingGroupForm__leftField
+      = f.label :name, "作業時間", class: 'SettingGroupForm__label'
+    .SettingGroupForm__rightField
+      = f.time_select :start_time_id, {prompt:'--', minute_step: 15,ignore_date: true}, {class: 'select-time'}
+      &emsp;〜&emsp;
+      = f.time_select :end_time_id, {prompt:'--', minute_step: 15,ignore_date: true}, {class: 'select-time'}
+  .SettingGroupForm__field
+    .SettingGroupForm__leftField
+      = f.label :name, "メンバー", class: 'SettingGroupForm__label'
+    .SettingGroupForm__rightField
+      = f.collection_check_boxes(:user_ids, group.users, :id, :name, include_hidden: false) do |b|
+        = b.label { b.check_box + b.text }
+  .SettingGroupForm__field
+    .SettingGroupForm__leftField
+      = f.label :name, "作業内容", class: 'SettingGroupForm__label'
+    .SettingGroupForm__rightField
+      = f.text_area :content, class: 'SettingGroupForm__area', placeholder: '作業内容を入力してください'
+  .SettingGroupForm__field
+    .SettingGroupForm__leftField
+    .SettingGroupForm__rightField
+      = f.submit class: 'SettingGroupForm__button'

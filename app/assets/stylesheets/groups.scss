@@ -4,9 +4,16 @@
   text-align: center;
   font-size: 4vh;
   padding: 2vh 0;
+  &__current-user-name {
+    font-size: 3vh;
+    position: absolute;
+    top: 1vh;
+    left: 3vw;
+    color: rgb(255, 70, 24);
+  }
   .logout {
     position: absolute;
-    top: 3vh;
+    top: 5vh;
     left: 3vw;
     text-decoration: none;
     color: black;
@@ -17,6 +24,14 @@
     top: 3vh;
     right: 3vw;
     color: #333;
+  }
+  &__new {
+    text-decoration: none;
+    color: black;
+    background-color: #aaa;
+    border: solid 0.1vh black;
+    position: absolute;
+    right: 5vw;
   }
   .arrow_box{
     position:absolute;
