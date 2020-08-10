@@ -1,10 +1,12 @@
 $(function(){
   function addUser(user) {
-    let html = `<div class="ChatMember clearfix">
-    <p class="ChatMember__name">${user.name}</p>
-    <div class="ChatMember__add ChatMember__button" data-user-id="${user.id}" data-user-name="${user.name}">追加</div>
-    </div>`;
-    $("#UserSearchResult").append(html);
+    if ($(".ChatMember__name").text().indexOf(user.name) == -1) {
+      let html = `<div class="ChatMember clearfix">
+      <p class="ChatMember__name">${user.name}</p>
+      <div class="ChatMember__add ChatMember__button" data-user-id="${user.id}" data-user-name="${user.name}">追加</div>
+      </div>`;
+      $("#UserSearchResult").append(html);
+    };
   }
 
   function addNoUser() {

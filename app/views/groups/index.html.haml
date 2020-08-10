@@ -1,5 +1,8 @@
 .group-top
   グループリスト
+  .group-top__current-user-name
+    = current_user.name
+    さん
   = link_to destroy_user_session_path, method: :delete, class: "logout" do
     ログアウト
   = link_to do

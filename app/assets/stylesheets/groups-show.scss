@@ -45,12 +45,34 @@
       border-right: solid 1px black;
       border-bottom: solid 1px black;
       display: flex;
-      justify-content: center;
-      padding-top: 1vh;
+      flex-direction: column;
+      align-items: center;
       font-size: 3vh;
+      text-align: center;
       cursor: pointer;
-      span {
-        display: inline-block;
+    }
+    &__top {
+      height: 30%;
+      width: 100%;
+      margin-bottom: 10%;
+    }
+    &__task {
+      height: 60%;
+      width: 100%;
+      font-size: 2vh;
+      &__top {
+        height: 50%;
+        background-color: cornflowerblue;
+        span {
+          vertical-align: middle;
+        }
+      }
+      &__btn {
+        height: 50%;
+        background-color: orange;
+        span {
+          vertical-align: middle;
+        }
       }
     }
   }
@@ -69,6 +91,7 @@
   padding: 2vh;
   display: none;
   background-color: white;
+  cursor: default;
   &__top {
     height: 20%;
     margin-bottom: 3vh;
@@ -94,11 +117,16 @@
   }
   &__btn {
     font-size: 3vh;
+    text-align: left;
     &__member {
       margin-bottom: 3vh;
     }
     &__content {
-
+      width: 100%;
+      &__content {
+        width: 100%;
+        padding: 2vh ;
+      }
     }
   }
 
