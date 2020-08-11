@@ -20,7 +20,20 @@ class GroupsController < ApplicationController
   def show
     @date = Date.today
     @wdays = ['(日)', '(月)', '(火)', '(水)', '(木)', '(金)', '(土)']
-    @task = Task.where('date LIKE(?) AND group_id LIKE(?)', "%#{Date.today.year}-#{collect_month}%", "%#{params[:id]}%")
+    @count = 0
+    if params[:type] == 'next'
+      @count = params[:count].to_i
+      @count += 1
+      change_month
+      @task = Task.where('date LIKE(?) AND group_id LIKE(?)', "%#{@date.year}-#{collect_month}%", "%#{params[:id]}%")
+    elsif params[:type] == 'pre'
+      @count = params[:count].to_i
+      @count -= 1
+      change_month
+      @task = Task.where('date LIKE(?) AND group_id LIKE(?)', "%#{@date.year}-#{collect_month}%", "%#{params[:id]}%")
+    else
+      @task = Task.where('date LIKE(?) AND group_id LIKE(?)', "%#{@date.year}-#{collect_month}%", "%#{params[:id]}%")
+    end
   end
 
   def edit; end
@@ -49,10 +62,21 @@ class GroupsController < ApplicationController
   end
 
   def collect_month
-    if Date.today.month < 10
-      "0#{Date.today.month}"
+    if @date.month < 10
+      "0#{@date.month}"
     else
-      Date.today.month.to_s
+      @date.month.to_s
+    end
+  end
+
+  def change_month
+    if @count >= 0
+      @count.times do
+        @date = @date.next_month
+      end
+    elsif @count.abs.times do
+            @date = @date.prev_month
+          end
     end
   end
 end

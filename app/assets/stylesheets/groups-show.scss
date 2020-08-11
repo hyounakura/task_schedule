@@ -186,3 +186,16 @@
     }
   }
 }
+
+.calendar__prev, .calendar__next {
+  position: absolute;
+  top: 13vh;
+  color: rgb(255, 98, 36);
+  cursor: pointer;
+}
+.calendar__prev {
+  left: 35vw;
+}
+.calendar__next {
+  right: 36vw;
+}
