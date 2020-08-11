@@ -12,6 +12,10 @@
     %span>年&emsp;
     %span= @date.month
     %span>月
+    = link_to group_path(@group.id, type: 'pre', count: @count), class: "prev-calendar" do
+      = icon('fa', 'chevron-circle-left', class: "calendar__prev")
+    = link_to group_path(@group.id, type: 'next', count: @count), class: "naxt-calendar" do
+      = icon('fa', 'chevron-circle-right', class: "calendar__next")
   .dayoftheweek
     - @wdays.each_with_index do |wday, i|
       - if i == 0
@@ -21,14 +25,14 @@
         .dayoftheweek__content2
           = wday
   .calendar-content.calendar-clickevent
-    - make_calendar[:start_week].each_with_index do |week, i|
+    - make_calendar(@count)[:start_week].each_with_index do |week, i|
       = render partial: 'calendar-content', locals: { week: week, i: i, task: @task, group: @group }
 
-    - make_calendar[:middle_week].each do |middle|
+    - make_calendar(@count)[:middle_week].each do |middle|
       - middle.each_with_index do |week, i|
         = render partial: 'calendar-content', locals: { week: week, i: i, task: @task, group: @group }
 
-    - make_calendar[:end_week].each_with_index do |week, i|
+    - make_calendar(@count)[:end_week].each_with_index do |week, i|
       = render partial: 'calendar-content', locals: { week: week, i: i, task: @task, group: @group }
 
 

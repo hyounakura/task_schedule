@@ -7,8 +7,17 @@ class ApplicationController < ActionController::Base
     groups_path
   end
 
-  def make_calendar
+  def make_calendar(count)
     today = Date.today
+    if count >= 0
+      count.times do
+        today = today.next_month
+      end
+    else
+      count.abs.times do
+        today = today.prev_month
+      end
+    end
     calendar = {}
     start_day = today.beginning_of_month
     start_week = [1, 2, 3, 4, 5, 6, 7]
