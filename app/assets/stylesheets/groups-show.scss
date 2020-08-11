@@ -91,6 +91,7 @@
   padding: 2vh;
   display: none;
   background-color: white;
+  border-radius: 1vh;
   cursor: default;
   &__top {
     height: 20%;
@@ -101,8 +102,15 @@
       display: flex;
       align-items: flex-end;
       font-size: 4vh;
+      position: relative;
       &__content {
         margin-left: 3vh;
+      }
+      &__edit {
+        position: absolute;
+        right: 1vw;
+        font-size: 5vh;
+        color: rgb(255, 98, 36);
       }
     }
     &__time {
@@ -119,7 +127,7 @@
     font-size: 3vh;
     text-align: left;
     &__member {
-      margin-bottom: 3vh;
+      margin-bottom: 5vh;
     }
     &__content {
       width: 100%;
@@ -128,6 +136,53 @@
         padding: 2vh ;
       }
     }
+    &__delete {
+      position: absolute;
+      right: 2.5vw;
+      bottom: 2vh;
+      color: rgb(255, 98, 36);
+      font-size: 4vh;
+      background-color: white;
+      border-style: none;
+      &__icon {
+        cursor: pointer;
+      }
+    }
   }
+}
 
+.group-task-new {
+  height: 20vh;
+  width: 40vw;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border: solid 0.3vh black;
+  padding: 2vh;
+  background-color: white;
+  border-radius: 1vh;
+  cursor: default;
+  display: none;
+  &__top {
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    span {
+      display: block;
+      font-size: 2.5vh;
+    }
+  }
+  &__btn {
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    .group-task-new__btn__path {
+      display: block;
+    }
+  }
 }

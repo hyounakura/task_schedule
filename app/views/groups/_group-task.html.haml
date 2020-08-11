@@ -3,6 +3,8 @@
     .group-task__top__name
       .group-task__top__name__content
         = task.name
+      = link_to edit_group_task_path(group.id, task.id), class: "group-task__top__name__edit" do
+        = icon('fa', 'wrench', class: "group-task__top__name__icon")
     .group-task__top__time
       .group-task__top__time__content
         作業時間&emsp;
@@ -28,3 +30,5 @@
       .group-task__btn__content__content
       &emsp;
       = task.content
+    = button_to group_task_path(group.id, task.id), method: :delete, class: "group-task__btn__delete" do
+      = icon('fa', 'trash', class: "group-task__btn__delete__icon")

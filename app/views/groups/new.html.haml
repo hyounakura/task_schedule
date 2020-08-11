@@ -1,4 +1,6 @@
 .group-top
   グループ名とメンバーを追加してください
+  = link_to groups_path, class: "group-top__index" do
+    = icon('fa', 'arrow-circle-left', class: "group-top__left-icon")
 
 = render partial: 'form', locals: { group: @group }
