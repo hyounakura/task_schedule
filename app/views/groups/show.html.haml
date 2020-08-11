@@ -1,7 +1,10 @@
 .group-top
   = @group.name
   スケジュール
-  = link_to '追加', new_group_task_path(@group.id), class: "group-top__new"
+  = link_to new_group_task_path(@group.id), class: "group-task-new__btn__path" do
+    = icon('fa', 'edit', class: "group-top__icon")
+  = link_to groups_path, class: "group-top__index" do
+    = icon('fa', 'arrow-circle-left', class: "group-top__left-icon")
 
 .group-show-btn
   .group-show-btn__title
@@ -19,11 +22,19 @@
           = wday
   .calendar-content.calendar-clickevent
     - make_calendar[:start_week].each_with_index do |week, i|
-      = render partial: 'calendar-content', locals: { week: week, i: i, task: @task}
+      = render partial: 'calendar-content', locals: { week: week, i: i, task: @task, group: @group }
 
     - make_calendar[:middle_week].each do |middle|
       - middle.each_with_index do |week, i|
-        = render partial: 'calendar-content', locals: { week: week, i: i, task: @task}
+        = render partial: 'calendar-content', locals: { week: week, i: i, task: @task, group: @group }
 
     - make_calendar[:end_week].each_with_index do |week, i|
-      = render partial: 'calendar-content', locals: { week: week, i: i, task: @task}
+      = render partial: 'calendar-content', locals: { week: week, i: i, task: @task, group: @group }
+
+
+.group-task-new
+  .group-task-new__top
+    %span 予定はありません
+  .group-task-new__btn
+    = link_to new_group_task_path(@group.id), class: "group-task-new__btn__path" do
+      %span 作成する

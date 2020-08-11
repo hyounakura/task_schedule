@@ -11,7 +11,7 @@
             %span=task.start_time_id.hour
             %span：
             %span=min_collect(task.start_time_id.min)
-        = render partial: 'group-task', locals: { task: task }
+        = render partial: 'group-task', locals: { task: task, group: group }
 - else
   .calendar-content__other
     .calendar-content__top
@@ -25,4 +25,4 @@
             %span=task.start_time_id.hour
             %span：
             %span=min_collect(task.start_time_id.min)
-        = render partial: 'group-task', locals: { task: task }
+        = render partial: 'group-task', locals: { task: task, group: group }

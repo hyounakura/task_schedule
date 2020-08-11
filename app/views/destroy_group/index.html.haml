@@ -1,9 +1,11 @@
 .group-top
   削除するグループを選んでください
+  = link_to groups_path, class: "group-top__index" do
+    = icon('fa', 'arrow-circle-left', class: "group-top__left-icon")
 
 .group-btn
   - current_user.groups.each do |group|
-    =link_to group_path(group.id), method: :delete,  class: "edit_group" do
+    =link_to group_path(group.id), method: :delete, data: { confirm: '削除しますか？' },   class: "edit_group" do
       .group-btn__contents
         .group-content
           .group-content__name
