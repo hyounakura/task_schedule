@@ -8,9 +8,9 @@
 https://task-schedule-27914.herokuapp.com/
 
 * テスト用アカウント  
-- email  
+-- email  
 t@t  
-- password  
+-- password  
 ta1234
 
 * 利用方法
