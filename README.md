@@ -7,10 +7,10 @@
 * URL
 https://task-schedule-27914.herokuapp.com/
 
-* テスト用アカウント
--email  
-t@t
--password  
+* テスト用アカウント  
+- email  
+t@t  
+- password  
 ta1234
 
 * 利用方法
