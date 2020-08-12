@@ -66,16 +66,18 @@
 
 |Column|Type|Option|
 |------|----|------|
-|place|string|null: false|
-|group_id|integer|null: false, foreign_key: true|
+|name|string|null: false|
+|start_time_id|time|null: false|
+|end_time_id|time|null: false|
+|group_id|references|foreign_key: true|
 |date_id|date|null: false|
+|content|text|
 
 ### Association
 
 - has_many  :users, through: :user_tasks
 - has_many  :user_tasks
 - belongs_to  :group
-- has_one  :content
 
 
 ## User_taskテーブル
@@ -90,41 +92,3 @@
 - belongs_to :user
 - belongs_to :task
 
-
-## Contentテーブル
-
-|Column|Type|Option|
-|------|----|------|
-|work_content|text|
-|add|text|
-|task_id|integer|null: false, foreign_key: true|
-
-### Association
-
-- belongs_to  :task
-- has_many  :items, through: :content_items
-- has_many  :content_items
-
-
-## Content_itemテーブル
-
-|Column|Type|Option|
-|------|----|------|
-|content_id|integer|null: false, foreign_key: true|
-|item_id|integer|null: false, foreign_key: true|
-
-### Association
-
-- belongs_to :content
-- belongs_to :item
-
-
-## Itemテーブル
-
-|Column|Type|Option|
-|------|----|------|
-|name|string|null: false|
-
-### Association
-
-- has_many :content_item
