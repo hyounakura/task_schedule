@@ -1,0 +1,55 @@
+.new_user {
+  height: 100%;
+  width: 100%;
+  padding: 8vh 0 2vh 0;
+  .field {
+    height: 14vh;
+    display: flex;
+    &__left {
+      height: 100%;
+      width: 45%;
+      font-size: 3vh;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      color: black;
+    }
+    &__right {
+      height: 100%;
+      width: 55%;
+      display: flex;
+      align-items: center;
+      margin-left: 1vw;
+      input {
+        height: 5vh;
+        font-size: 2.5vh;
+      }
+    }
+  }
+  .actions {
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    input {
+      height: 6vh;
+      width: 8vw;
+      border: solid 0.5vh rgb(255, 98, 36);
+      ;
+      border-radius: 2vh;
+      appearance: none;
+      cursor: pointer;
+      outline: none;
+      padding: 0;
+      background-color: skyblue;
+      color: black;
+      font-size: 3vh;
+    }
+  }
+}
+
+#error_explanation {
+  text-align: center;
+  font-size: 3vh;
+  color: red;
+}
