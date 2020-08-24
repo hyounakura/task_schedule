@@ -22,7 +22,7 @@ ta1234
 ## 実装した機能についてのGIFと説明
 
 * 予定を作成し、確認することができます。  
-https://gyazo.com/0059967b373aa5d638940eb02569fbd5
+[![Image from Gyazo](https://i.gyazo.com/0059967b373aa5d638940eb02569fbd5.gif)](https://gyazo.com/0059967b373aa5d638940eb02569fbd5)
 
 * 翌月、前月を表示できるように実装しました。  
 https://gyazo.com/b42c92718bd3e999b1cf4b553915f876
