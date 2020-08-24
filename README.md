@@ -1,5 +1,6 @@
 # 仕事管理アプリ
 
+<a href="https://gyazo.com/2d663a79e38b4a9886eb165d99dd56cf"><img src="https://i.gyazo.com/2d663a79e38b4a9886eb165d99dd56cf.png" alt="Image from Gyazo" width="1184"/></a>
 
 ## アプリケーション概要  
 カレンダーとスケジュール管理機能を実装しました。これを作成した背景として、前職のタスク管理をホワイトボードで行っており、社員の方がスケジュールを会社に戻って確認していたことがあります。グループ機能をつけ、メンバー全員がスケジュールを確認できるように実装しました。
@@ -23,11 +24,9 @@ ta1234
 
 * 予定を作成し、確認することができます。
 
-
 <a href="https://gyazo.com/0059967b373aa5d638940eb02569fbd5"><img src="https://i.gyazo.com/0059967b373aa5d638940eb02569fbd5.gif" alt="Image from Gyazo" width="500"/></a>
 
 * 翌月、前月を表示できるように実装しました。
-
 
 <a href="https://gyazo.com/b42c92718bd3e999b1cf4b553915f876"><img src="https://i.gyazo.com/b42c92718bd3e999b1cf4b553915f876.gif" alt="Image from Gyazo" width="500"/></a>
 
