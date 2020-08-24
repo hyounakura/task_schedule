@@ -25,7 +25,7 @@ ta1234
 <a href="https://gyazo.com/0059967b373aa5d638940eb02569fbd5"><img src="https://i.gyazo.com/0059967b373aa5d638940eb02569fbd5.gif" alt="Image from Gyazo" width="500"/></a>
 
 * 翌月、前月を表示できるように実装しました。  
-https://gyazo.com/b42c92718bd3e999b1cf4b553915f876
+<a href="https://gyazo.com/b42c92718bd3e999b1cf4b553915f876"><img src="https://i.gyazo.com/b42c92718bd3e999b1cf4b553915f876.gif" alt="Image from Gyazo" width="500"/></a>
 
 ## データベース設計
 
