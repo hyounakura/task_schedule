@@ -47,8 +47,9 @@ class GroupsController < ApplicationController
   end
 
   def destroy
-    @group.destroy
-    redirect_to action: :index
+    if @group.destroy
+      redirect_to action: :index
+    end
   end
 
   private
