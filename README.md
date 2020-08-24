@@ -22,7 +22,7 @@ ta1234
 ## 実装した機能についてのGIFと説明
 
 * 予定を作成し、確認することができます。  
-https://gyazo.com/5bc447d12c2aec94e2d97d4419bb3b87
+https://gyazo.com/0059967b373aa5d638940eb02569fbd5
 
 ## データベース設計
 
