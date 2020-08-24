@@ -1,4 +1,4 @@
-# 仕事管理アプリ
+# スケジュール管理アプリ
 
 <a href="https://gyazo.com/2d663a79e38b4a9886eb165d99dd56cf"><img src="https://i.gyazo.com/2d663a79e38b4a9886eb165d99dd56cf.png" alt="Image from Gyazo" width="800"/></a>
 
@@ -29,6 +29,10 @@ ta1234
 * 翌月、前月を表示できるように実装しました。
 
 <a href="https://gyazo.com/b42c92718bd3e999b1cf4b553915f876"><img src="https://i.gyazo.com/b42c92718bd3e999b1cf4b553915f876.gif" alt="Image from Gyazo" width="600"/></a>
+
+* 非同期通信で日付に紐づいた予定を表示させることができます。
+
+<a href="https://gyazo.com/63bd055dc2c5ac3ed1e9e71b244cad67"><img src="https://i.gyazo.com/63bd055dc2c5ac3ed1e9e71b244cad67.gif" alt="Image from Gyazo" width="600"/></a>
 
 ## データベース設計
 
