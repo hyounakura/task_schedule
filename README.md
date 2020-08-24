@@ -42,7 +42,7 @@ https://gyazo.com/b42c92718bd3e999b1cf4b553915f876
 - has_many  :groups, through: :user_groups
 - has_many  :user_groups
 - has_many  :tasks, through: :user_task
-- has_many  :user_tasks
+- has_many  :user_tasks, dependent: :destroy
 
 
 ### User_groupテーブル
@@ -67,8 +67,8 @@ https://gyazo.com/b42c92718bd3e999b1cf4b553915f876
 #### Association
 
 - has_many  :users, through: :user_groups
-- has_many  :user_groups
-- has_many  :tasks
+- has_many  :user_groups, dependent: :destroy
+- has_many  :tasks, dependent: :destroy
 
 
 ### Taskテーブル
@@ -85,7 +85,7 @@ https://gyazo.com/b42c92718bd3e999b1cf4b553915f876
 #### Association
 
 - has_many  :users, through: :user_tasks
-- has_many  :user_tasks
+- has_many  :user_tasks, dependent: :destroy
 - belongs_to  :group
 
 
